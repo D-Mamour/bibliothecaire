@@ -26,8 +26,18 @@ class Application:
 
                     case "1":
                         try:
-                            titre = input("Titre : ").strip()
-                            auteur = input("Auteur : ").strip()
+                            while True: 
+                                titre = input("Titre : ").strip().replace("'", "''")
+                                if not titre.isalpha():
+                                    print("Le titre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
+                            while True:
+                                auteur = input("Auteur : ").strip().replace("'", "''")
+                                if not auteur.isalpha():
+                                    print("L'auteur ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
 
                             doc = Livre(titre, auteur)
                             self.bibliothecaire.ajouter_document(doc)
@@ -38,8 +48,18 @@ class Application:
 
                     case "2":
                         try:
-                            titre = input("Titre : ").strip()
-                            numero = input("Numéro : ").strip()
+                            while True:
+                                titre = input("Titre : ").strip().replace("'", "''")
+                                if not titre.isalpha():
+                                    print("Le titre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
+                            while True:
+                                numero = input("Numéro : ").strip()
+                                if not numero.isdigit():
+                                    print("Le numéro doit être un nombre.")
+                                else:
+                                    break
 
                             doc = Magazine(titre, numero)
                             self.bibliothecaire.ajouter_document(doc)
@@ -50,7 +70,12 @@ class Application:
 
                     case "3":
                         try:
-                            nom = input("Nom du membre : ").strip()
+                            while True:
+                                nom = input("Nom du membre : ").strip().replace("'", "''")
+                                if not nom.isalpha():
+                                    print("Le nom du membre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
                             self.bibliothecaire.inscrire_membre(nom)
                             print("Membre inscrit avec succès.")
                         except Exception as e:
@@ -58,8 +83,18 @@ class Application:
 
                     case "4":
                         try:
-                            titre = input("Titre : ").strip()
-                            nom = input("Nom membre : ").strip()
+                            while True:
+                                titre = input("Titre : ").strip().replace("'", "''")
+                                if not titre.isalpha():
+                                    print("Le titre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
+                            while True:
+                                nom = input("Nom membre : ").strip().replace("'", "''")
+                                if not nom.isalpha():
+                                    print("Le nom du membre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
                             self.bibliothecaire.emprunter_document(titre, nom)
                             print("Emprunt validé.")
                         except Exception as e:
@@ -67,8 +102,18 @@ class Application:
 
                     case "5":
                         try:
-                            titre = input("Titre : ").strip()
-                            nom = input("Nom membre : ").strip()
+                            while True:
+                                titre = input("Titre : ").strip().replace("'", "''")
+                                if not titre.isalpha():
+                                    print("Le titre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
+                            while True:
+                                nom = input("Nom membre : ").strip().replace("'", "''")
+                                if not nom.isalpha():
+                                    print("Le nom du membre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
                             self.bibliothecaire.retourner_document(titre, nom)
                             print("Retour validé.")
                         except Exception as e:
@@ -84,7 +129,12 @@ class Application:
 
                     case "7":
                         try:
-                            nom = input("Nom membre : ").strip()
+                            while True:
+                                nom = input("Nom membre : ").strip().replace("'", "''")
+                                if not nom.isalpha():
+                                    print("Le nom du membre ne peut pas contenir de chiffres ni de caractères spéciaux.")
+                                else:
+                                    break
                             emprunts = self.bibliothecaire.afficher_emprunts_membre(nom)
                             if not emprunts:
                                 print("Aucun emprunt pour ce membre.")

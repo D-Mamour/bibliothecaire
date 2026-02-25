@@ -13,13 +13,13 @@ class Livre(Document):
         return self._auteur
 
     def emprunter(self):
-        if not self.disponible:
-            raise Exception("Livre déjà indisponible.")
-        self._changer_disponibilite(False)
+        if not self.disponible: 
+            raise Exception("Livre déjà indisponible.") 
+        self._changer_disponibilite(False) 
 
     def retourner(self):
         self._changer_disponibilite(True)
 
     def __str__(self):
-        statut = "Disponible" if self.disponible else "Indisponible"
+        statut = "Disponible" if self.disponible else "Indisponible" 
         return f"Livre: {self.titre} | Auteur: {self.auteur} | {statut}"
